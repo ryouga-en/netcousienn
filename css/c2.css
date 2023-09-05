@@ -1,0 +1,161 @@
+@media(max-width: 1024px) {
+  .koukokupc1{
+    display:none;
+  }
+  .koukokupad1{
+    display:block;
+    margin-left:10%;
+    width:80%;
+    text-align:center;
+    margin-top:140px;
+    margin-bottom:20px;
+  }
+}
+@media(max-width: 767px) {
+  .migi {
+    display: none;
+  }
+  .head {
+    width: 70%;
+    position: absolute;
+    height: 66px;
+  }
+  .search {
+    margin-left: 0%;
+    width: 100%;
+  }
+  .syouri_messageA {
+    font-size: 30px;
+  }
+  .syouri_messageB {
+    font-size: 30px;
+  }
+  .syouri_messageB1 {
+    font-size: 30px;
+  }
+  .syouri_messageA1 {
+    font-size: 30px;
+  }
+  .idou {
+    margin-left: -20%;
+    margin-top: 70px;
+  }
+  .mar {
+    display: none;
+  }
+  .gidai1 {
+    font-size: 30px;
+  }
+  .gidai3 {
+    font-size: 30px;
+  }
+  .ikenagati{
+    font-size:25px;
+  }
+  .ikenbgati{
+    font-size:25px;
+  }
+  .ikena {
+    font-size: 25px;
+    height:80px;
+  }
+  .ikenb {
+    font-size: 25px;
+    height:80px;
+  }
+  .ikena_tokutenn {
+    font-size: 50px;
+  }
+  .ikenb_tokutenn {
+    font-size: 50px;
+  }
+  .ikena_touhyou .hyouka2 {
+    font-size: 20px;
+    border-radius: 20px;
+  }
+  .ikenb_touhyou .hyouka2 {
+    font-size: 20px;
+    border-radius: 20px;
+  }
+  .gidai{
+    width:100%;
+    margin-left:0;
+  }
+  .sec{
+    width:100%;
+    margin-left:0;
+  }
+  .comment {
+    margin-top: 30px;
+    width: 100%;
+    margin-left: 0;
+  }
+  .ikena2 {
+    height: 100px;
+  }
+  .ikenb2 {
+    height: 100px;
+  }
+  .ikena_text {
+    height: 20px;
+    font-size: 10px;
+  }
+  .ikenb_text {
+    height: 20px;
+    font-size: 10px;
+  }
+  .sec {
+    width: 100%;
+    margin-left: 0;
+  }
+  .sec h2 {
+    font-size: 20px;
+  }
+  .sec p {
+    font-size: 15px;
+  }
+  .syouritenn {
+    width: 20%;
+    height: 50px;
+    font-size: 50px;
+  }
+  form #message {
+    ime-mode: active;
+    height: 100px;
+  }
+  .toukou {
+    font-size: 20px;
+  }
+  .koukokupad1{
+    display:none;
+  }
+  .koukokusm1{
+    display:block;
+    width:100%;
+    text-align:center;
+    margin-top:140px;
+  }
+  .ikena_touhyou{
+    padding: 15px 15px;
+  }
+  .ikenb_touhyou{
+    padding: 15px 15px;
+  }
+}
+@media(max-width: 320px) {
+  .koukokuga1{
+    display:block;
+    width:100%;
+    text-align:center;
+    margin-top:140px;
+  }
+  .koukokusm1{
+    display:none;
+  }
+  .ikena_touhyou{
+    padding: 10px 10px;
+  }
+  .ikenb_touhyou{
+    padding: 10px 10px;
+  }
+}

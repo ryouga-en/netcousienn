@@ -1,0 +1,719 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+  box-sizing: border-box;
+
+ }
+ body{margin:0;padding:0;
+  background-image: url("https://netcousienn.com/img/sibafu.jpg");
+ }
+::-webkit-scrollbar {
+  width: 10px; }
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); }
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 50, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3); }
+
+  header {
+    height: 66px;
+    background-color: rgba(39, 49, 70, 0.9);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+  width: 100%; }
+
+      header  .header-left {
+        float: left;
+        vertical-align: top; }
+        header  .header-left .menu-icon {
+          float: left;
+          color: white;
+          font-size: 25px;
+          padding: 20px 25px;
+          margin-top: -0px;
+          display: block; }
+          header  .header-left .menu-icon:hover {
+            background-color: rgba(39, 49, 70, 0.9); }
+       
+          header  .header-left img:hover {
+            background-color: rgba(39, 49, 70, 1); }
+
+        .search {
+
+          margin-top:66px;
+          z-index: 9;
+          background: rgba(39, 49, 70, 0.5);
+        width: 100%;
+    position: fixed;
+    display: flex;
+    padding-top:10px;
+    padding-bottom: 10px;
+          margin-left:0%;
+
+  }
+
+  .searchTerm {
+    width: 70%;
+    border: 1px solid rgba(39, 49, 70, 1);
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+
+    outline: none;
+    color: rgba(39, 49, 70, 1);
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    margin-left: 15%;
+  }
+
+  .searchTerm:focus{
+    color: rgba(39, 49, 70, 1);
+    height: 36px;
+  }
+
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid rgba(39, 49, 70, 1);
+    background: rgba(39, 49, 70, 1);
+    text-align: center;
+    color: #fff;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .idou{
+    display:inline-block;
+    margin-left:90%;
+    z-index: 10;
+    position:fixed;
+    margin-top:-240px;
+  }
+
+  .comment_btn img{
+
+
+    width:60px;
+    height:60px;
+
+  }
+
+  /*Resize the wrap to see the search bar change!*/
+
+        header .header-right .wrap {
+          width: 30%;
+          position: absolute;
+          background: rgba(39, 49, 70, 0.6);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+      header  .header-right-right {
+        float: right;
+
+       margin-top:15px;
+        background-color: white;
+        border-color: black;
+      border-radius: 5px;
+     padding-right:5px;
+     padding-left:5px;
+     padding-top:-2px;
+     padding-bottom: -2px;
+        margin-right:1%;
+       }
+        header .header-right-right .twitter {
+          background-color: white;
+          text-decoration: none;
+
+           }
+           .twitter2{
+             color:#55acee;
+
+           }
+        header .header-right-right .btn {
+
+          color: white;
+
+          opacity: 1;
+          border-radius: 4px;
+         }
+        header  .header-right-right .btn:hover {
+          opacity: 0.9; }
+          header .header-right3 {
+            float: right;
+
+           margin-top:15px;
+            background-color: white;
+            border-color: black;
+          border-radius: 10px;
+         padding: 0 5px;
+            margin-right:1%;
+      }
+            header .header-right3 a {
+              font-family: fantasy;
+              cursor: pointer;
+              float: left;
+              transition: all 0.5s;
+              color: black;
+              font-size: 23px;
+              text-decoration: none;
+              font-weight:bold;
+               }
+              header .header-right3:hover {
+                background-color: rgba(255,255,255,0.9); }
+                header .header-right-right-right-right {
+                  float: right;
+                  vertical-align: top; }
+
+
+  .menu {
+      z-index: 10;
+      float: left;
+      padding-right: 25px;
+      position: absolute;
+      top: 66px;
+      background-color: rgba(39, 49, 70, 0.9);
+      display: none;
+      font-family: fantasy;
+    }
+      .menu li {
+        color: white;
+        line-height: 35px; }
+        .active {
+          display: block; }
+          .menu a{
+            text-decoration: none;
+              font-family: fantasy;
+          }
+          .menu li:hover{
+            color:red;
+          }
+.active {
+  display: block; }
+
+
+
+
+
+　　　
+     .siaisakusei_haikei {
+       float:left;
+       margin-left:10%;
+       display:block;
+border:solid 4px black;
+    }
+
+
+       .siaisakusei h2 {
+        font-weight:100;
+        color: white;
+
+        text-align: center;
+         }
+         .info form{
+           border-top:solid 4px black;
+         }
+      .gidai{
+        width:80%;
+        text-align:center;
+        margin-left:10%;
+        border:solid 4px black;
+
+      }
+      .gidai2{
+        background-image: url("https://netcousienn.com/img/aoaka2.bmp");
+        background-position: center;
+        color:white;
+        border-bottom:solid 4px black;
+      }
+      .gidai1{
+        width:100%;
+        display:block;
+        text-align:center;
+        font-size:50px;
+      }
+      .gidai3{
+        width:100%;
+        display:block;
+        text-align:center;
+        font-size:50px;
+      }
+
+      .jikoku{
+        font-size:20px;
+      }
+      .bikou{
+        width:100%;
+        display:table;
+        color:white;
+
+        font-size:7px;
+        border-bottom:solid 4px black;
+      }
+
+
+      .yuusyou{
+        width:100%;
+        display:table;
+          color:gold;
+        text-align:center;
+        font-size:0px;
+        border-bottom:solid 4px black;
+      }
+      .t1{
+        display:inline-block;
+        float:left;
+         background-image: url("https://netaousienn.com/img/trophy_gold.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width:65px;
+        height:65px;
+
+      }
+      .t2{
+        display:inline-block;
+        background-image: url("https://netcousienn.com/img/trophy_gold.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width:65px;
+        height:65px;
+      }
+      .syouri_messageA{
+        font-size:50px;
+        display:inline-block;
+        float:left;
+        text-align:center;
+        width:calc(100% - 130px);
+
+      }
+      .syouri_messageB{
+        font-size:50px;
+        display:inline-block;
+        float:left;
+        text-align:center;
+        width:calc(100% - 130px);
+
+      }
+      .syouri_messageA1{
+        font-size:50px;
+        display:inline-block;
+        float:left;
+        text-align:center;
+        width:calc(100% - 130px);
+
+      }
+      .syouri_messageB1{
+        font-size:50px;
+        display:inline-block;
+        float:left;
+        text-align:center;
+        width:calc(100% - 130px);
+      }
+      .kata3a{
+
+
+      }
+      .kata3b{
+
+
+      }
+      .kata1{
+        display:inline-block;
+        text-align: center;
+        background-color:white;
+        width:50%;
+       border-right:solid 2px black;
+        color:white;
+        float:left;
+
+      }
+      .kata4{
+        text-align: center;
+        display:block;
+        margin-top:5%;
+      }
+
+      .red1{
+        color:red;
+      }
+      .blue1{
+        color:blue;
+      }
+      .kata2{
+        width:50%;
+        text-align: center;
+        display:inline-block;
+        background-color:white;
+        border-left:solid 2px black;
+
+      }
+      .ikenagati{
+       font-size:30px;
+      }
+.ikenbgati{
+       font-size:30px;
+      }
+      .ikena{
+        width:100%;
+        font-size:30px;
+        display:block;
+        background-color:red;
+       border-bottom:solid 4px black;
+       height:50px;
+      }
+      .ikena_tokutenn{
+        background-color:white;
+        color:red;
+        display:block;
+        font-size:90px;
+        width:100%;
+              text-align:center;
+
+      }
+      .ikenb{
+        width:100%;
+        font-size:30px;
+        display:block;
+        color:white;
+        background-color:blue;
+       border-bottom:solid 4px black;
+       height:50px;
+      }
+      .ikenb_tokutenn{
+        background-color:white;
+        color:blue;
+        display:block;
+          font-size:90px;
+          width:100%;
+
+        text-align:center;
+
+      }
+
+    　 .kata5{
+      display:block;
+
+    }
+      .ikena_touhyou{
+        display:inline-block;
+        float:left;
+width:100%;
+  padding: 0.8em 3em;
+  background-color: red; /* 背景色 */
+
+
+        border-top:solid 4px black;
+  color: #fff;
+  cursor: pointer;
+      }
+
+.ikena_touhyou .hyouka2{
+  width:100%;
+  background-color:red;
+  color:white;
+  font-size:30px;
+   box-shadow: 0 5px 0 black; /* 影の太さ・色 */
+  border-radius:30px;
+}
+.ikena_touhyou .hyouka2:hover{
+
+  box-shadow:none;
+  transform: translateY(5px);
+
+}
+      .ikenb_touhyou{
+
+        width:100%;
+        display:inline-block;
+        padding: 0.8em 3em;
+        background-color: blue; /* 背景色 */
+
+
+        border-top:solid 4px black;
+        color: #fff;
+        cursor: pointer;
+      }
+
+.ikenb_touhyou .hyouka2{
+  width:100%;
+  background-color:blue;
+  color:white;
+  font-size:30px;
+   box-shadow: 0 5px 0 black; /* 影の太さ・色 */
+border-radius:30px;
+}
+.ikenb_touhyou .hyouka2:hover{
+
+  box-shadow:none;
+  transform: translateY(5px);
+
+}
+.sec{
+  display:block;
+  width:80%;
+  margin-left:10%;
+  background: #ffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+
+  word-break: break-all;
+  float: left;
+
+
+  padding-bottom: ;
+}
+.sec h2{
+  color: <?php echo $color; ?>;
+  display: inline-block;
+  margin-left:20px;
+}
+.sec .discussion{
+  font-size: 25px;
+  background: rgba(39, 49, 70, 0.9);
+  padding: 4px;
+  text-align: center;
+  color: #FFF;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+
+  text-decoration: none;
+
+}
+.info{
+  border-bottom:4px solid;
+  border-left:4px solid;
+  border-right: 4px solid;
+  border-color:black;
+}
+.sec p{
+  margin-left:20px;
+}
+time{
+  font-size: 15px;
+  margin-left: 3%;
+  display: inline-block;
+}
+.red {
+  color: red;
+font-size: 20px;}
+
+.black {
+  color: black;
+font-size: 20px; }
+
+    .am{
+      margin-top: 30px;
+      text-align: center;
+    }
+    .la{
+
+      text-align: center;
+    }
+    .dochi .lavel1{
+      font-size: 25px;
+      color: red;
+
+    }
+    .dochi .lavel2{
+      font-size: 25px;
+      color: blue;
+    }
+    .lavel3{
+      margin-left:2%;
+    }
+    .lavel4{
+      margin-left:2%;
+    }
+
+
+
+.a{
+  display:inline-block;
+  float:left;
+  margin-top:20px;
+  margin-left:5%;
+    margin-right:10%;
+  width:40%;
+
+}
+.a_box{
+  background-color:white;
+  border: solid 4px red;
+  padding:10px;
+  font-size:40px;
+  color:red;
+}
+.lavel1{
+  cursor:pointer;
+}
+.b{
+  margin-top:20px;
+  display:inline-block;
+  width:40%;
+}
+.b_box{
+  padding:10px;
+  font-size:40px;
+  background-color:white;
+  border: solid 4px blue;
+  color:blue;
+  cursor:pointer;
+}
+label{
+  cursor:pointer;
+}
+
+
+.comment {
+  margin-left:10%;
+  background: #ffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+  margin-bottom:20px;
+  display: inline-block;
+  width: 80%;
+
+  margin-top:140px;
+ }
+ .comment .discussion {
+   font-size: 1.2em;
+   background: rgba(39, 49, 70, 0.9);
+   padding: 4px;
+   text-align: center;
+   color: #FFF;
+   font-weight: bold;
+   letter-spacing: 0.05em;
+
+   text-decoration: none; }
+ .comment p {
+   text-align: center;
+   color: black; }
+ .do{
+   margin-top: 2%;
+   margin-left: 2%;
+ }
+ .na{
+   margin-top: 2%;
+   margin-left: 2%;
+ }
+ .co{
+   margin-top: 2%;
+   margin-left: 2%;
+   vertical-align: middle;
+ }
+ form .toukou input{
+
+ }
+ .message{
+ ime-mode:active;
+   height:200px;
+   width:80%;
+   margin-left:10%;
+ }
+ .comment lavel{
+   text-align: top;
+   font-size: 20px;
+ }
+ .toukou {
+   margin-top: 20px;
+ display       : inline-block;
+ margin-bottom: 16px;
+ font-size     : 30px;        /* 文字サイズ */
+ text-align    : center;      /* 文字位置   */
+
+ cursor        : pointer;     /* カーソル   */
+ padding       : 12px 12px;   /* 余白       */
+ background    : rgba(39, 49, 70, 0.9);     /* 背景色     */
+ color         : #ffffff;     /* 文字色     */
+ line-height   : 1em;         /* 1行の高さ  */
+ transition    : .3s;         /* なめらか*/
+
+ margin-left:2%;
+
+ }
+
+ .toukou:hover {
+ box-shadow    : none;        /* カーソル時の影消去 */
+ color         : rgba(39, 49, 70, 1);     /* 背景色     */
+ background    : #ffffff;     /* 文字色     */
+ }
+ .se{
+ text-align    : center;
+ }
+ .agati{
+   font-size: 20px;
+   color:red;
+   width:50%;
+ }
+ .bgati{
+   font-size: 20px;
+   color: blue;
+ }
+ form #message {
+   width: 80%;
+
+   vertical-align: top;
+   border:1px solid;
+    }
+ form #view_name {
+   height: 30px;
+   width: 30%;
+   vertical-align: middle;
+ border:1px solid; }
+   .ni{
+     font-size: 20px;
+   }
+   .syouritenn{
+     font-size: 20px;
+   }
+   .success_message3{
+     font-size:20px;
+   }
+
+   .migi{
+     margin-right:6%;
+   }
+   .hensin{
+     display:inline-block;
+   }
+   .ve1{
+     overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   }
+   .ve2{
+     overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   }
+
+
+
+
+
+.migi{
+  margin-right:6%;
+}
+.kie{
+  display:none;
+}
+.koukokupc1{
+  margin-left:10%;
+  width:80%;
+  text-align:center;
+  margin-top:140px;
+  margin-bottom:20px;
+}
+.koukokupad1{
+  display:none;
+}
+.koukokusm1{
+  display:none;
+}
+.koukokuga1{
+  display:none;
+}
