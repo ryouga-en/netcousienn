@@ -1,5 +1,4 @@
 # netcousienn
-# name
 ネット甲子園
 
 ## Overview
