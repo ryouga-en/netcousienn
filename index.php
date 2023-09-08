@@ -8,10 +8,10 @@
 $pdo1=null;
 $stmt1=null;
 $res1=null;
-$saisin_data=();
+$saisin_data=null;
 $stmt2=null;
 $res2=null;
-$ranking_data=();
+$ranking_data=null;
 $cnt2=0;
 //DB接続
 $pdo1 = new PDO('mysql:charset=UTF8;dbname='.DB_NAME1.';host='.DB_HOST1 , DB_USER1, DB_PASS1);
