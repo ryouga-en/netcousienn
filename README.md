@@ -2,7 +2,7 @@
 
 ## App URL
 https://netcousienn.com/
-## 使いかた
+[## 使いかた](https://github.com/ryouga-en/netcousienn/issues/4#issue-1889292818)
 アプリの使いかた→https://netcousienn.com/tsukaikata
 ## 開発言語
 -php
