@@ -66,7 +66,7 @@ if($hyouji1=='no'||$hyouji1=='sube'){
     $stmt1 = $pdo1->prepare($sql1);
     $stmt1->bindParam( ':gidai', $gidai, PDO::PARAM_STR);
     $res1 = $stmt1->execute();
-  if($res2){
+  if($res1){
     $search_data2 = $stmt1->fetchall();
     $cnt = count($search_data2);
   }
