@@ -1,17 +1,18 @@
 <?php
 //DB接続情報
-//define( 'DB_HOST1', '');
-//define( 'DB_USER1', '');
-//define( 'DB_PASS1', '');
-//define( 'DB_NAME1', '');
+define( 'DB_HOST1', '');
+define( 'DB_USER1', '');
+define( 'DB_PASS1', '');
+define( 'DB_NAME1', '');
 session_start();
 //DB接続
 $pdo1 = new PDO('mysql:charset=UTF8;dbname='.DB_NAME1.';host='.DB_HOST1 , DB_USER1, DB_PASS1);
+//検索内容取得
 if(!empty($_GET['kennsakunaiyou'])){
   $kennsaku = preg_replace( '/\A[\p{C}\p{Z}]++|[\p{C}\p{Z}]++\z/u', '', $_GET['kennsakunaiyou']);
 }
 $gidai = '%'.$kennsaku.'%';
-
+//データ取得
 if(!empty($_GET['hyouji1'])){
   $hyouji1=$_GET['hyouji1'];
 }else{
@@ -23,7 +24,7 @@ if(!empty($_GET['hyouji2'])){
   $hyouji2='no';
 }
 
-
+//データ範囲
 if(!empty($_GET['ai'])){
   if($_GET['ai']=='すべて'){
       $hyouji1='sube';
@@ -35,6 +36,7 @@ if(!empty($_GET['ai'])){
       $hyouji1='sumi';
   }
 }
+//データ順番
 if(!empty($_GET['bi'])){
   if($_GET['bi']=='人気順'){
       $hyouji2='ninki';
@@ -51,12 +53,14 @@ if(!empty($_GET['bi'])){
 }else{
   $hyouji3='新着順';
 }
+//決着判断
 if($hyouji1=='tyuu'){
   $touhyou='ari';
 }
 if($hyouji1=='sumi'){
   $touhyou='nasi';
 }
+//あてはまる単語があるか
 if($hyouji1=='no'||$hyouji1=='sube'){
     $sql1 = "SELECT * FROM gidai WHERE  gidai LIKE :gidai ";
     $stmt1 = $pdo1->prepare($sql1);
@@ -70,85 +74,97 @@ if($hyouji1=='no'||$hyouji1=='sube'){
     $gidai_id[] = $fruit['gidai_id'];
     $gidai_etsurannsuu[] = $fruit['etsurannsuu'];
   }
-
-
 }
+//決着判断データ抽出
 if($hyouji1=='tyuu'||$hyouji1=='sumi'){
     $stmt2 = $pdo1->prepare("SELECT * FROM gidai WHERE  gidai LIKE :gidai AND keltsutyaku = :keltsutyaku");
     $stmt2->bindParam( ':keltsutyaku', $touhyou, PDO::PARAM_STR);
     $stmt2->bindParam( ':gidai', $gidai, PDO::PARAM_STR);
     $res2 = $stmt2->execute();
-if($res2){
+  if($res2){
     $search_data2 = $stmt2->fetchall();
     $cnt = count($search_data2);
   }
-    foreach($search_data2 as $fruit) {
+  foreach($search_data2 as $fruit) {
       $gidai_id[] = $fruit['gidai_id'];
       $gidai_etsurannsuu[] = $fruit['etsurannsuu'];
-    }
+  }
 
 
 }
 if($cnt>=1){
-  $top='66px';
+  
+  //データ範囲が指定なし、データ順番が指定なし
   if($hyouji1=='no'&&$hyouji2=='no'){
     array_multisort($gidai_id,SORT_DESC,$search_data2);
   }
+  //データ範囲がすべて、データ順番が指定なし
   if($hyouji1=='sube'&&$hyouji2=='no'){
     array_multisort($gidai_id,SORT_DESC,$search_data2);
   }
+  //データ範囲が議論中、データ順番が指定なし
   if($hyouji1=='tyuu'&&$hyouji2=='no'){
     array_multisort($gidai_id,SORT_DESC,$search_data2);
   }
+  //データ範囲が決着済み、データ順番が指定なし
   if($hyouji1=='sumi'&&$hyouji2=='no'){
     array_multisort($gidai_id,SORT_DESC,$search_data2);
   }
+  //データ範囲が指定なし、データ順番が人気順
   if($hyouji1=='no'&&$hyouji2=='ninki'){
     array_multisort($gidai_etsurannsuu,SORT_DESC,$search_data2);
   }
+  //データ範囲が指定なし、データ順番が新着順
   if($hyouji1=='no'&&$hyouji2=='sin'){
     array_multisort($gidai_id,SORT_DESC,$search_data2);
   }
+  //データ範囲が指定なし、データ順番が古い順
   if($hyouji1=='no'&&$hyouji2=='furui'){
     array_multisort($gidai_id,SORT_ASC,$search_data2);
   }
+  //データ範囲がすべて、データ順番が人気順
   if($hyouji1=='sube'&&$hyouji2=='ninki'){
     array_multisort($gidai_etsurannsuu,SORT_DESC,$search_data2);
   }
+  //データ範囲がすべて、データ順番が新着順
   if($hyouji1=='sube'&&$hyouji2=='sin'){
     array_multisort($gidai_id,SORT_DESC,$search_data2);
   }
+  //データ範囲が指定なし、データ順番が古い順
   if($hyouji1=='sube'&&$hyouji2=='furui'){
     array_multisort($gidai_id,SORT_ASC,$search_data2);
   }
+  //データ範囲が議論中、データ順番が人気順
   if($hyouji1=='tyuu'&&$hyouji2=='ninki'){
     array_multisort($gidai_etsurannsuu,SORT_DESC,$search_data2);
   }
+  //データ範囲が議論中、データ順番が新着順
   if($hyouji1=='tyuu'&&$hyouji2=='sin'){
     array_multisort($gidai_id,SORT_DESC,$search_data2);
   }
+  //データ範囲が議論中、データ順番が古い順
   if($hyouji1=='tyuu'&&$hyouji2=='furui'){
     array_multisort($gidai_id,SORT_ASC,$search_data2);
   }
+  //データ範囲が決着済み、データ順番が人気順
   if($hyouji1=='sumi'&&$hyouji2=='ninki'){
     array_multisort($gidai_etsurannsuu,SORT_DESC,$search_data2);
   }
+  //データ範囲が決着済み、データ順番が新着順
   if($hyouji1=='sumi'&&$hyouji2=='sin'){
     array_multisort($gidai_id,SORT_DESC,$search_data2);
   }
+  //データ範囲が決着済み、データ順番が古い順
   if($hyouji1=='sumi'&&$hyouji2=='furui'){
     array_multisort($gidai_id,SORT_ASC,$search_data2);
   }
 }
-if($cnt=='0'){
-  $top='66px';
-}
-
-  $stmt3 = $pdo1->prepare("SELECT * FROM gidai ORDER BY etsurannsuu DESC");
-  $res3 = $stmt3->execute();
+$top='66px';
+//人気順
+$stmt3 = $pdo1->prepare("SELECT * FROM gidai ORDER BY etsurannsuu DESC");
+$res3 = $stmt3->execute();
 if($res3){
   $ranking_data = $stmt3->fetchall();
-  $cnt3 = count($ranking_data);
 }
 $pdo1 = null;
 ?>
@@ -169,16 +185,13 @@ $pdo1 = null;
    <meta property="og:description" content="勝敗の付く討論サイトです。" />
    <meta property="og:site_name" content="ネット甲子園" />
    <meta property="og:image" content="https://netcousienn.com/img/netkousienn" />
-   <!-- Google tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-238889833-1">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'UA-238889833-1');
-</script>
+      gtag('config', 'UA-238889833-1');
+   </script>
    <title>ネット甲子園</title>
 </head>
 <body>
