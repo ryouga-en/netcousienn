@@ -1,9 +1,9 @@
 <?php
 //DB接続情報
-define( 'DB_HOST', 'mysql215.phy.lolipop.lan');
-define( 'DB_USER', 'LAA1531041');
-define( 'DB_PASS', 'tsuriyoka18782');
-define( 'DB_NAME', 'LAA1531041-gidaikanri');
+define( 'DB_HOST', '');
+define( 'DB_USER', '');
+define( 'DB_PASS', '');
+define( 'DB_NAME', '');
 $pdo=null;
 $sql=null;
 $gidai_date=null;
