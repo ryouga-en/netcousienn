@@ -4,8 +4,8 @@
 https://netcousienn.com/
 
 ##　使いかた
-- 試合に参加する
-- 試合を作成する
+1. 試合に参加する
+1. 試合を作成する
 ## 開発言語
 -php
 -javascript
