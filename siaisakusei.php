@@ -1,19 +1,21 @@
 <?php
 //DB接続情報
-//define( 'DB_HOST1', '');
-//define( 'DB_USER1', '');
-//define( 'DB_PASS1', '');
-//define( 'DB_NAME1', '');
+define( 'DB_HOST', '');
+define( 'DB_USER', '');
+define( 'DB_PASS', '');
+define( 'DB_NAME', '');
 $pdo=null;
 $sql=null;
 $gidai_date=null;
-$pdo = new PDO('mysql:charset=UTF8;dbname='.DB_NAME1.';host='.DB_HOST1 , DB_USER1, DB_PASS1);
-  $stmt = $pdo->prepare("SELECT MAX(gidai_id) FROM gidai");
-  $res= $stmt->execute();
-  if($res){
-   $maxgidai_data = $stmt->fetch();
-   $siai_id = $maxgidai_data['MAX(gidai_id)'];
-  }
+//DB接続
+$pdo = new PDO('mysql:charset=UTF8;dbname='.DB_NAME.';host='.DB_HOST , DB_USER, DB_PASS);
+//最後のID取得
+$stmt = $pdo->prepare("SELECT MAX(gidai_id) FROM gidai");
+$res= $stmt->execute();
+if($res){
+  $maxgidai_data = $stmt->fetch();
+  $siai_id = $maxgidai_data['MAX(gidai_id)'];
+}
 $pdo = null;
 $token = md5(microtime());
  ?>
@@ -27,16 +29,12 @@ $token = md5(microtime());
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="css/b2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-238889833-1">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-238889833-1');
-</script>
+　　<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-238889833-1');
+    </script>
     <title>ネット甲子園（試合作成）</title>
   </head>
   <body>
