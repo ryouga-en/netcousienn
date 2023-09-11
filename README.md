@@ -4,8 +4,7 @@
 https://netcousienn.com/
 
 # 使い方
-## 1.試合に参加する
-## 2.試合を作成する
+https://netcousienn.com/tsukaikata
 # 開発言語
 -php
 -javascript
